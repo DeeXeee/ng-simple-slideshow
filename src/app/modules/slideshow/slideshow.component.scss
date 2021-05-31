@@ -143,13 +143,25 @@ $border-color: darken(#FFF, 5%);
     }
   }
 
-  .caption {
+  .caption-container {
     position: absolute;
-    bottom: 0;
-    padding: 10px;
-    width: 100%;
+    bottom: 30%;
+    width: 20%;
+    left: 5%;
+    .caption {
+      font-size: 2vw;
+      font-weight: bold;
+      max-width: 32ch;
+      width: 100%;
+      text-shadow: 4px 4px 3px #000000;
+    }
+    .caption-description {
+      font-size: 1.2vw;
+      max-width: 40ch;
+      text-shadow: 4px 4px 3px #000000;
+      font-weight: 400;
+    }
   }
-
   .arrow-container {
     display: flex;
     align-items: center;
@@ -287,6 +299,63 @@ $border-color: darken(#FFF, 5%);
       }
     }
   }
+  .button-container {
+    position: absolute;
+    z-index: 1;
+    bottom: 8%;
+    &.left {
+      left: 5%;
+    }
+    &.right {
+      right: 5%;
+    }
+    button {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      border-radius: 2px;
+      box-shadow: 0 3px 0 0 #2d849e, inset 0 2px 1px 0 rgba(255, 255, 255, 0.17);
+      background-image: linear-gradient(to bottom, var(--quinary-color), #31a1ba);
+      background-image: -webkit-linear-gradient(bottom, var(--quinary-color), #31a1ba);
+      border: solid 1px #50c7ea;
+      &.orange {
+        box-shadow: 0 3px 0 0 #a17002, inset 0 2px 1px 0 rgba(255, 255, 255, 0.16);
+        background-image: linear-gradient(to bottom, #ffb527, #ff7e11);
+        background-image: -webkit-linear-gradient(#ffb527, #ff7e11);
+        border: solid 1px #ff7e11;
+      }
+      &.green {
+        box-shadow: 0 3px 0 0 #327f15, inset 0 10px 10px 0 rgba(255, 255, 255, 0.28);
+        background-image: linear-gradient(#4fbf24, #45a620);
+        background-image: -webkit-linear-gradient(#4fbf24, #45a620);
+        border: solid 1px #4fc920;
+      }
+      &.blue {
+        box-shadow: 0 3px 0 0 #244d91, inset 0 10px 10px 0 rgba(255, 255, 255, 0.28);
+        background-image: linear-gradient(#4188fe, #3674d8);
+        background-image: -webkit-linear-gradient(#4188fe, #3674d8);
+        border: solid 1px #5e9cff;
+      }
+      &.grey {
+        box-shadow: 0 3px 0 0 grey, inset 0 10px 10px 0 rgba(255, 255, 255, 0.28);
+        background-image: linear-gradient(#b5b8b3, #b4b4b4);
+        background-image: -webkit-linear-gradient(#b5b8b3, #b4b4b4);
+        border: solid 1px #b4b4b4;
+      }
+      &.red {
+        box-shadow: 0 3px 0 0 #7f1515, inset 0 10px 10px 0 rgba(255, 255, 255, 0.28);
+        background-image: linear-gradient(#bf2424, #a62020);
+        background-image: -webkit-linear-gradient(#bf2424, #a62020);
+        border: solid 1px #c92020;
+      }
+    }
+
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -383,3 +452,88 @@ $border-color: darken(#FFF, 5%);
     transform: rotate(360deg);
   }
 }
+
+@media only screen and(max-width:1300px) {
+  .slideshow-container {
+    .caption-container {
+      .caption {
+        font-size: 2.5vw;
+      }
+      .caption-description {
+        font-size: 1.3vw;
+      }
+    }
+  }
+
+
+  .slideshow-container {
+    .button-container {
+       button {
+        font-size: 13px;
+        }
+      }
+    }
+}
+
+@media only screen and(max-width:950px) {
+  .slideshow-container {
+    .caption-container {
+      .caption-description {
+        font-size: 1.5vw;
+      }
+    }
+  }
+}
+
+@media only screen and(max-width:750px) {
+  .slideshow-container {
+    .caption-container {
+      width: 30%;
+      .caption {
+        font-size: 3.5vw;
+      }
+      .caption-description {
+        font-size: 2.5vw;
+      }
+    }
+  }
+
+  .slideshow-container {
+    .button-container {
+       button {
+        padding: 14px 10px;
+        font-size: 10px;
+        }
+      }
+    }
+}
+
+
+@media only screen and(max-width:600px) {
+  .slideshow-container {
+    .caption-container {
+      width: 40%;
+      .caption {
+        font-size: 5.5vw;
+      }
+      .caption-description {
+        font-size: 4.5vw;
+      }
+    }
+  }
+}
+
+@media only screen and(max-width:450px) {
+  .slideshow-container {
+    .caption-container {
+      width: 50%;
+      .caption {
+        font-size: 7.5vw;
+      }
+      .caption-description {
+        font-size: 6.5vw;
+      }
+    }
+  }
+}
+
