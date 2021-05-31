@@ -27,13 +27,28 @@
      [class.link]="slide?.image?.clickAction || slide?.image?.href">
     <div class="loader"
          *ngIf="!slide?.loaded"></div>
-    <div *ngIf="showCaptions && slide?.image?.caption"
-         class="caption"
-         [ngStyle]="{
-           'color': captionColor,
-           'background-color': captionBackground
+    <div *ngIf="showCaptions" class="caption-container">
+      <!-- caption -->
+        <div *ngIf="slide?.image?.caption"
+            class="caption"
+            [ngStyle]="{
+              'color': captionColor
+
+              }"
+            [innerHTML]="slide?.image?.caption">
+        </div>
+        <!-- caption description -->
+        <div *ngIf="slide?.image?.captionDescription"
+        class="caption-description"
+        [ngStyle]="{
+          'color': captionColor
           }"
-         [innerHTML]="slide?.image?.caption">
+        [innerHTML]="slide?.image?.captionDescription">
+    </div>
+    </div>
+    <!-- button container -->
+    <div [ngClass]="{'right': buttonPosition === 'right', 'left': buttonPosition === 'left'}" *ngIf="slide.image.button" class="button-container">
+      <button  [class]="slide.image.buttonColor || 'green'">Test Button</button>
     </div>
   </a>
   <!-- left arrow -->

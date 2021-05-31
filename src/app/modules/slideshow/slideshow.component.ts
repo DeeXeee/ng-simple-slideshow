@@ -27,8 +27,8 @@ export class SlideshowComponent implements OnInit, AfterViewInit, DoCheck, OnCha
   private _isHidden: boolean = false;
   private _slideSub: Subscription;
   private _clickSub: Subscription;
-
   @Input() imageUrls: (string | IImage)[] = [];
+  @Input() buttonPosition : string = 'left';
   @Input() height: string = '100%';
   @Input() minHeight: string;
   @Input() arrowSize: string;
@@ -98,6 +98,7 @@ export class SlideshowComponent implements OnInit, AfterViewInit, DoCheck, OnCha
   }
 
   ngAfterViewInit(): void {
+    console.log(this.slides)
     this._pointerService.bind(this.container);
   }
 
